@@ -28,6 +28,12 @@ Making sure your virtual environment is activated, install the dependencies usin
 pip install -r requirements.txt
 ```
 
+Set environment variables
+```
+export FLASK_DEBUG=True
+export FLASK_ENV=development
+```
+
 Run the Flask server
 ```
 flask run
