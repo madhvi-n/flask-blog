@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask | Blog</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </head>
+  <body>
+    <div style="margin-top: 50px;" class="ui container">
+      <a href="/">Home</a>
+      <div class="ui divider"></div>
+      <h1 class="ui center aligned header">{{ post.title }}</h1>
+      <p class="ui">{{ post.content }}</p>
+    </div>
+  </body>
+</html>

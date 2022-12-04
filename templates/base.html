@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask | Blog</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </head>
+  <body>
+    <div style="margin-top: 50px;" class="ui container">
+      <h1 class="ui center aligned header">Flask Blog</h1>
+      <form class="ui form" action="/posts/create" method="post">
+        <div class="field">
+          <input type="text" name="title" placeholder="Enter title">
+        </div>
+        <div class="field">
+          <textarea name="content" placeholder="Content" rows="8" cols="100"></textarea>
+        </div>
+        <button class="ui blue button" type="submit">Create post</button>
+      </form>
+
+      <div class="ui divider"></div>
+
+      {% for post in posts %}
+      <div class="ui segment">
+        <a href="/posts/{{post.id}}">
+          <h1 class="ui big header">{{ post.title }}</h1>
+        </a>
+        <p class="ui">{{ post.content }}</p>
+        <div class="ui left labeled button" tabindex="0">
+          <a class="ui basic right pointing label">
+            2,048
+          </a>
+          <div class="ui button">
+            <i class="heart icon"></i> Likes
+          </div>
+        </div>
+        <div class="ui left labeled button" tabindex="0">
+          <a class="ui basic right pointing label">
+            112
+          </a>
+          <div class="ui button">
+            <i class="comments icon"></i> Comments
+          </div>
+        </div>
+        <div class="ui left labeled button" tabindex="0">
+          <a class="ui basic right pointing label">
+            1,043
+          </a>
+          <div class="ui button">
+            <i class="share icon"></i> Share
+          </div>
+        </div>
+        <!-- <a class="ui button" href="/posts/{{ post.id}}/edit">Edit</a>
+        <a class="ui button" href="/posts/{{ post.id}}/delete">Delete</a> -->
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
